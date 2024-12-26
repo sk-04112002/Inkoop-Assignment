@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="number_input" style="display: flex;flex-direction: column;align-items: center;justify-content: center;height: 100vh;width: 100vw;">
+        <label for="myNumber" style="margin-right: 10px;font-weight: 600;">Enter a Number:</label>
+        <input type="number" id="myNumber">
+        <p id="result" style="margin: 10px;font-weight: 600;"></p>
+    </div>
+    <script>
+        let x = document.getElementById("myNumber");
+        let res = document.getElementById("result");
+        x.addEventListener("input",() => {
+            let value = parseFloat(x.value);
+            if(!isNaN(value)){
+                if(value < 0){
+                res.innerText = `enter a positive value`;
+                }else{
+                res.innerText = `${value+2}, ${value+4}, ${value+6}`;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
